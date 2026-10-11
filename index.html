@@ -1,106 +1,764 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <!-- Basic -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stock Market Basics – Join Free</title>
-  <meta name="description" content="100% free stock market education. Learn chart reading, technical analysis, and risk management. No buy/sell tips. For learning purpose only.">
-  <link rel="canonical" href="https://example.com/">
+  <meta charset="UTF-8">
+  <title>Zero To Hero Trading | Official Channel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join Zero To Hero Trading's exclusive Telegram community for market insights, price action concepts, and disciplined risk management.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
 
-  <!-- Performance -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Favicons (optional) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1675293810224610');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1675293810224610&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Stock Market Basics – Join Free">
-  <meta property="og:description" content="Learn charts & risk management. No buy/sell tips. 100% educational.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://example.com/">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1516251193007-45ef944ab0c6?q=80&w=1600&auto=format&fit=crop">
-
-  <!-- Minimal CSS (inline for speed) -->
   <style>
-    :root{
-      --bg1:#0c0c1d;
-      --bg2:#1a1a2b;
-      --brand: #66ffcc;
-      --brand-2:#00f0ff;
-      --text:#ffffff;
-      --muted:#b5b5c3;
+    :root {
+      --bg-deep: #0a0d14;
+      --card-bg: rgba(17, 24, 39, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --primary-accent: #2563eb;
+      --primary-gradient: linear-gradient(135deg, #0088cc 0%, #00b4d8 100%);
+      --gold-accent: #f59e0b;
+      --text-main: #f8fafc;
+      --text-sub: #94a3b8;
+      --text-muted: #64748b;
+      --surface-glass: rgba(255, 255, 255, 0.03);
+      --surface-glass-hover: rgba(255, 255, 255, 0.06);
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background:
-        linear-gradient(135deg, rgba(0,0,0,.45), rgba(0,0,0,.45)),
-        url('https://images.unsplash.com/photo-1516251193007-45ef944ab0c6?q=80&w=1600&auto=format&fit=crop') no-repeat center/cover fixed;
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-      min-height:100vh;
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-tap-highlight-color: transparent;
     }
-    .container{
-      max-width:520px; margin:0 auto; padding:24px 18px; text-align:center; min-height:100vh; display:flex; flex-direction:column; justify-content:center;
-      backdrop-filter: saturate(130%);
+
+    body {
+      min-height: 100vh;
+      background-color: var(--bg-deep);
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.15), transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 180, 216, 0.08), transparent 40%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--text-main);
+      overflow-x: hidden;
+      position: relative;
+      padding: 16px;
     }
-    .badge{display:inline-block; font-size:.78rem; padding:6px 10px; border:1px solid #2a2a3a; border-radius:999px; color:#d6eaff; background:rgba(0,240,255,.08); margin-bottom:14px}
-    h1{font-size:1.9rem; line-height:1.2; margin:6px 0 10px; background:linear-gradient(90deg,var(--brand-2),var(--brand)); -webkit-background-clip:text; background-clip:text; color:transparent;}
-    .sub{font-size:1rem; color:var(--muted); margin:0 auto 16px; max-width:36ch}
-    .pill{
-      display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:rgba(0,255,153,.07); border:1px dashed rgba(0,255,153,.35); color:#d8ffe9; font-size:.9rem; margin:6px 0 18px;
+
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 40px 40px;
     }
-    ul.bullets{list-style:none; padding:0; margin:0 0 18px}
-    ul.bullets li{margin:8px 0; color:#e9eef9}
-    .cta{
-      display:inline-block; text-decoration:none; background:var(--brand); color:#041b14; padding:14px 18px; font-weight:700; border-radius:12px; box-shadow:0 0 0 0 rgba(0,255,153,.6); transform:translateZ(0);
-      transition:transform .15s ease;
-      animation:pulse 1.6s infinite;
+
+    #particles {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
     }
-    .cta:active{transform:scale(.98)}
-    @keyframes pulse{
-      0%{box-shadow:0 0 0 0 rgba(0,255,153,.55)}
-      70%{box-shadow:0 0 0 20px rgba(0,255,153,0)}
-      100%{box-shadow:0 0 0 0 rgba(0,255,153,0)}
+
+    .wrapper {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 440px;
+      background: var(--card-bg);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--card-border);
+      border-radius: 28px;
+      padding: 36px 24px 28px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+      text-align: center;
+      animation: cardEntry 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
-    .fineprint{font-size:.86rem; color:var(--muted); margin:18px auto 0; max-width:44ch}
-    .disclaimer{font-size:.78rem; color:#9aa4b2; margin:18px auto 0; max-width:50ch}
-    .safe{display:flex; align-items:center; justify-content:center; gap:8px; margin-top:14px; color:#a1ffd6; font-size:.9rem}
-    .shield{width:18px; height:18px; display:inline-block; border-radius:4px; background:linear-gradient(135deg,#0df,#0f9)}
-    footer{opacity:.8; margin-top:22px; font-size:.78rem; color:#9aa4b2}
+
+    @keyframes cardEntry {
+      from { opacity: 0; transform: translateY(30px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(37, 99, 235, 0.12);
+      border: 1px solid rgba(37, 99, 235, 0.3);
+      color: #60a5fa;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #60a5fa;
+      box-shadow: 0 0 8px #60a5fa;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .profile-section {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    .profile-glow {
+      position: absolute;
+      inset: -10px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 136, 204, 0.35), transparent 70%);
+      filter: blur(12px);
+    }
+
+    .profile-border {
+      position: relative;
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      padding: 2.5px;
+      background: linear-gradient(135deg, #0088cc, #38bdf8);
+      z-index: 2;
+    }
+
+    .profile-border img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      background: #1e293b;
+      display: block;
+    }
+
+    h1 {
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.3px;
+    }
+
+    .tagline {
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    .cta {
+      margin-top: 24px;
+    }
+
+    .cta a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 14px 20px;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 14px;
+      background: var(--primary-gradient);
+      color: #ffffff;
+      text-decoration: none;
+      box-shadow: 0 10px 25px -5px rgba(0, 136, 204, 0.4);
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px -5px rgba(0, 136, 204, 0.55);
+    }
+
+    .cta a:active {
+      transform: scale(0.98);
+    }
+
+    .cta-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .timer-box {
+      margin-top: 14px;
+      padding: 10px 14px;
+      background: var(--surface-glass);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+    }
+
+    .timer-text {
+      font-size: 11px;
+      color: var(--text-sub);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .timer-count {
+      font-weight: 700;
+      color: #38bdf8;
+      min-width: 16px;
+    }
+
+    .timer-progress {
+      margin-top: 8px;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .timer-progress-bar {
+      height: 100%;
+      background: var(--primary-gradient);
+      width: 100%;
+      border-radius: 99px;
+      transition: width 1s linear;
+    }
+
+    .features {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .feature-card {
+      background: var(--surface-glass);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 14px 12px;
+      text-align: left;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .feature-card:hover {
+      background: var(--surface-glass-hover);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .feature-card .f-icon {
+      font-size: 18px;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .feature-card h3 {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 2px;
+    }
+
+    .feature-card p {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    .cta-row {
+      margin-top: 14px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .cta-secondary, .copy-wrap {
+      flex: 1;
+    }
+
+    .cta-secondary a, .copy-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+      padding: 11px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 12px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .cta-secondary a {
+      background: var(--surface-glass);
+      color: var(--text-sub);
+      border: 1px solid var(--card-border);
+    }
+
+    .cta-secondary a:hover {
+      background: var(--surface-glass-hover);
+      color: var(--text-main);
+    }
+
+    .copy-btn {
+      background: var(--surface-glass);
+      color: var(--text-sub);
+      border: 1px solid var(--card-border);
+      outline: none;
+    }
+
+    .copy-btn:hover {
+      background: var(--surface-glass-hover);
+      color: var(--text-main);
+    }
+
+    .copy-btn.copied {
+      border-color: #10b981;
+      color: #34d399;
+      background: rgba(16, 185, 129, 0.08);
+    }
+
+    .trust {
+      margin-top: 18px;
+      font-size: 11.5px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .disclaimer {
+      margin-top: 14px;
+      font-size: 10px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      border-top: 1px solid var(--card-border);
+      padding-top: 14px;
+    }
+
+    .netad-btn {
+      margin-top: 12px;
+    }
+
+    .netad-btn a {
+      display: inline-flex;
+      align-items: center;
+      font-size: 10px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .netad-btn a:hover {
+      color: var(--text-sub);
+    }
+
+    .redirect-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(10, 13, 20, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .redirect-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .redirect-card {
+      text-align: center;
+      max-width: 360px;
+      width: 100%;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 30px 20px;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+
+    .redirect-card .r-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--primary-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      box-shadow: 0 8px 20px rgba(0, 136, 204, 0.4);
+    }
+
+    .redirect-card h2 {
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .redirect-card p {
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .redirect-card .ov-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 13px;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 12px;
+      background: var(--primary-gradient);
+      color: #fff;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+
+    .redirect-card .ov-tg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+      padding: 11px;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 12px;
+      background: var(--surface-glass);
+      color: var(--text-sub);
+      border: 1px solid var(--card-border);
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+
+    .redirect-card .ov-copy {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      background: transparent;
+      border: 1px dashed var(--card-border);
+      color: var(--text-muted);
+      font-size: 11px;
+      cursor: pointer;
+    }
   </style>
 </head>
+
 <body>
-  <main class="container">
-    <span class="badge">100% Educational • Policy Safe</span>
-    <h1>Stock Market Basics – Join Free</h1>
-    <p class="sub">Education only – no investment advice</p>
 
-    <div class="pill">🚫 No Buy/Sell Tips • ✅ For Learning Purpose Only</div>
+<div class="bg-grid" aria-hidden="true"></div>
+<canvas id="particles" aria-hidden="true"></canvas>
 
-    <ul class="bullets" aria-label="What you'll learn">
-      <li>• Chart basics & risk rules (no return promises)</li>
-      <li>• How to read trends without speculation</li>
-      <li>• Market discipline & common mistakes</li>
-    </ul>
+<div class="wrapper">
+  
+  <div class="badge">
+    <span class="badge-dot"></span> Free Educational Access
+  </div>
 
-    <!-- CTA goes to a page-specific bridge -->
-    <a class="cta" href="bridge-lp56.html" rel="nofollow">Start Learning</a>
+  <div class="profile-section">
+    <div class="profile-glow"></div>
+    <div class="profile-border">
+      <img src="Zth.jpeg" alt="Zero To Hero Trading">
+    </div>
+  </div>
 
-    <div class="safe"><span class="shield" aria-hidden="true"></span> Ad Policy Friendly Content</div>
+  <h1>ZERO TO HERO TRADING</h1>
+  <div class="tagline">Discipline &bull; Strategy &bull; Mindset</div>
 
-    <p class="fineprint">We focus on concepts & frameworks suitable for beginners.</p>
-    <p class="disclaimer"><em>This website is for educational purposes only. We do not provide investment, trading, or financial advice.</em></p>
+  <!-- Main CTA -->
+  <div class="cta">
+    <a href="tg://join?invite=aTXFsnAaTzA1YjQ9" onclick="trackSubscribe()">
+      <svg class="cta-icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+      </svg>
+      Join Telegram Channel
+    </a>
+  </div>
 
-    <footer>© <span id="y"></span> Market Basics Learning Hub</footer>
-  </main>
+  <div class="timer-box">
+    <div class="timer-text">
+      Auto-redirecting in <span id="countdown" class="timer-count">15</span> seconds...
+    </div>
+    <div class="timer-progress">
+      <div class="timer-progress-bar" id="progressBar"></div>
+    </div>
+  </div>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <div class="features">
+    <div class="feature-card">
+      <span class="f-icon">📊</span>
+      <h3>Market Basics</h3>
+      <p>Simplified zero-to-hero guides</p>
+    </div>
+    <div class="feature-card">
+      <span class="f-icon">📈</span>
+      <h3>Price Action</h3>
+      <p>Clean chart & setup breakdowns</p>
+    </div>
+    <div class="feature-card">
+      <span class="f-icon">🛡️</span>
+      <h3>Risk Control</h3>
+      <p>Capital preservation frameworks</p>
+    </div>
+    <div class="feature-card">
+      <span class="f-icon">💎</span>
+      <h3>100% Free</h3>
+      <p>Pure education, no hidden fees</p>
+    </div>
+  </div>
+
+  <div class="cta-row">
+    <div class="cta-secondary">
+      <a href="tg://join?invite=aTXFsnAaTzA1YjQ9" onclick="trackSubscribe()">
+        Open in App
+      </a>
+    </div>
+    <div class="copy-wrap">
+      <button class="copy-btn" id="copyBtn" onclick="copyLink()">
+        Copy Link
+      </button>
+    </div>
+  </div>
+
+  <div class="trust">
+    <span>🔒 Verified Community &bull; Learners Across India</span>
+  </div>
+
+  <div class="disclaimer">
+    Strictly for educational and awareness purposes only.<br>
+    We do not offer SEBI-registered advisory, financial tips, or guaranteed return schemes.
+  </div>
+
+  <div class="netad-btn">
+    <a href="https://t.me/+UyYzth29HpY4MDVl" target="_blank" rel="noopener">
+      Agency Support & Contact
+    </a>
+  </div>
+
+</div>
+
+<!-- Fallback Overlay -->
+<div class="redirect-overlay" id="redirectOverlay">
+  <div class="redirect-card">
+    <div class="r-icon">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+      </svg>
+    </div>
+    <h2>Redirecting to Telegram</h2>
+    <p>Tap below if the Telegram app didn't open automatically on your device.</p>
+    <a href="tg://join?invite=aTXFsnAaTzA1YjQ9" class="ov-cta" onclick="trackSubscribe()">
+      Open Telegram App
+    </a>
+    <a href="https://t.me/+aTXFsnAaTzA1YjQ9" target="_blank" rel="noopener" class="ov-tg" onclick="trackSubscribe()">
+      Open in Web Browser
+    </a>
+    <button class="ov-copy" id="overlayCopyBtn" onclick="copyLinkOverlay()">
+      Copy Channel Link
+    </button>
+  </div>
+</div>
+
+<script>
+var TG_WEB_LINK = "https://t.me/+aTXFsnAaTzA1YjQ9";
+var TG_APP_LINK = "tg://join?invite=aTXFsnAaTzA1YjQ9";
+var redirectAttempted = false;
+
+function trackSubscribe() {
+  if (typeof fbq === 'function') {
+    fbq('track', 'Subscribe');
+  }
+}
+
+function trackLead() {
+  if (typeof fbq === 'function') {
+    fbq('track', 'Lead');
+  }
+}
+
+function copyLink() {
+  copyToClipboard(TG_WEB_LINK, document.getElementById("copyBtn"));
+}
+
+function copyLinkOverlay() {
+  copyToClipboard(TG_WEB_LINK, document.getElementById("overlayCopyBtn"));
+}
+
+function copyToClipboard(text, btn) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function() {
+      showCopied(btn);
+    }).catch(function() {
+      fallbackCopy(text, btn);
+    });
+  } else {
+    fallbackCopy(text, btn);
+  }
+}
+
+function fallbackCopy(text, btn) {
+  var ta = document.createElement("textarea");
+  ta.value = text;
+  ta.style.position = "fixed";
+  ta.style.left = "-9999px";
+  document.body.appendChild(ta);
+  ta.select();
+  try {
+    document.execCommand("copy");
+    showCopied(btn);
+  } catch(e) {
+    btn.textContent = "Failed";
+  }
+  document.body.removeChild(ta);
+}
+
+function showCopied(btn) {
+  var orig = btn.innerText;
+  btn.classList.add("copied");
+  btn.innerText = "Copied ✓";
+  setTimeout(function() {
+    btn.innerText = orig;
+    btn.classList.remove("copied");
+  }, 2000);
+}
+
+(function() {
+  var TOTAL = 15;
+  var seconds = TOTAL;
+  var countdownEl = document.getElementById("countdown");
+  var progressBar = document.getElementById("progressBar");
+  var overlay = document.getElementById("redirectOverlay");
+
+  var timer = setInterval(function() {
+    seconds--;
+    if (countdownEl) countdownEl.textContent = seconds;
+    if (progressBar) {
+      var pct = Math.max(0, (seconds / TOTAL) * 100);
+      progressBar.style.width = pct + "%";
+    }
+    if (seconds <= 0) {
+      clearInterval(timer);
+      trackLead();
+      tryAutoRedirect(overlay);
+    }
+  }, 1000);
+})();
+
+function tryAutoRedirect(overlay) {
+  if (redirectAttempted) return;
+  redirectAttempted = true;
+
+  var f = document.createElement("iframe");
+  f.style.display = "none";
+  f.src = TG_APP_LINK;
+  document.body.appendChild(f);
+
+  setTimeout(function() {
+    window.location.href = TG_APP_LINK;
+  }, 300);
+
+  setTimeout(function() {
+    if (f.parentNode) f.parentNode.removeChild(f);
+    if (overlay) overlay.classList.add("active");
+  }, 2000);
+}
+
+(function() {
+  var canvas = document.getElementById("particles");
+  var ctx = canvas.getContext("2d");
+  var particles = [];
+  var COUNT = 22;
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener("resize", resize);
+
+  function P() { this.reset(); }
+  P.prototype.reset = function() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.s = Math.random() * 1.5 + 0.5;
+    this.dx = (Math.random() - 0.5) * 0.3;
+    this.dy = (Math.random() - 0.5) * 0.3;
+    this.o = Math.random() * 0.2 + 0.05;
+  };
+  P.prototype.update = function() {
+    this.x += this.dx;
+    this.y += this.dy;
+    if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
+  };
+  P.prototype.draw = function() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.s, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(56, 189, 248, " + this.o + ")";
+    ctx.fill();
+  };
+
+  for (var i = 0; i < COUNT; i++) particles.push(new P());
+
+  (function loop() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (var i = 0; i < particles.length; i++) {
+      particles[i].update();
+      particles[i].draw();
+    }
+    requestAnimationFrame(loop);
+  })();
+})();
+</script>
+
 </body>
 </html>
