@@ -204,6 +204,7 @@ src="https://www.facebook.com/tr?id=1089448896066426&ev=PageView&noscript=1"
       transition: all 0.25s ease;
       position: relative;
       overflow: hidden;
+      cursor: pointer;
     }
 
     .cta a:hover {
@@ -462,6 +463,7 @@ src="https://www.facebook.com/tr?id=1089448896066426&ev=PageView&noscript=1"
       color: #fff;
       text-decoration: none;
       margin-bottom: 10px;
+      cursor: pointer;
     }
 
     .redirect-card .ov-tg {
@@ -479,6 +481,7 @@ src="https://www.facebook.com/tr?id=1089448896066426&ev=PageView&noscript=1"
       border: 1px solid var(--card-border);
       text-decoration: none;
       margin-bottom: 10px;
+      cursor: pointer;
     }
 
     .redirect-card .ov-copy {
@@ -517,7 +520,7 @@ src="https://www.facebook.com/tr?id=1089448896066426&ev=PageView&noscript=1"
 
   <!-- Main CTA -->
   <div class="cta">
-    <a href="tg://join?invite=aTXFsnAaTzA1YjQ9" onclick="trackSubscribe()">
+    <a href="tg://join?invite=aTXFsnAaTzA1YjQ9" onclick="handleJoinClick(event, 'tg://join?invite=aTXFsnAaTzA1YjQ9', 'Main CTA')">
       <svg class="cta-icon" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
       </svg>
@@ -559,7 +562,7 @@ src="https://www.facebook.com/tr?id=1089448896066426&ev=PageView&noscript=1"
 
   <div class="cta-row">
     <div class="cta-secondary">
-      <a href="tg://join?invite=aTXFsnAaTzA1YjQ9" onclick="trackSubscribe()">
+      <a href="tg://join?invite=aTXFsnAaTzA1YjQ9" onclick="handleJoinClick(event, 'tg://join?invite=aTXFsnAaTzA1YjQ9', 'Open in App Button')">
         Open in App
       </a>
     </div>
@@ -597,10 +600,10 @@ src="https://www.facebook.com/tr?id=1089448896066426&ev=PageView&noscript=1"
     </div>
     <h2>Redirecting to Telegram</h2>
     <p>Tap below if the Telegram app didn't open automatically on your device.</p>
-    <a href="tg://join?invite=aTXFsnAaTzA1YjQ9" class="ov-cta" onclick="trackSubscribe()">
+    <a href="tg://join?invite=aTXFsnAaTzA1YjQ9" class="ov-cta" onclick="handleJoinClick(event, 'tg://join?invite=aTXFsnAaTzA1YjQ9', 'Overlay App CTA')">
       Open Telegram App
     </a>
-    <a href="https://t.me/+aTXFsnAaTzA1YjQ9" target="_blank" rel="noopener" class="ov-tg" onclick="trackSubscribe()">
+    <a href="https://t.me/+aTXFsnAaTzA1YjQ9" target="_blank" rel="noopener" class="ov-tg" onclick="handleJoinClick(event, 'https://t.me/+aTXFsnAaTzA1YjQ9', 'Overlay Web CTA', true)">
       Open in Web Browser
     </a>
     <button class="ov-copy" id="overlayCopyBtn" onclick="copyLinkOverlay()">
@@ -614,23 +617,38 @@ var TG_WEB_LINK = "https://t.me/+aTXFsnAaTzA1YjQ9";
 var TG_APP_LINK = "tg://join?invite=aTXFsnAaTzA1YjQ9";
 var redirectAttempted = false;
 
-function trackSubscribe() {
+// Real-time tracking function with standard Meta properties
+function trackSubscribeEvent(source) {
   if (typeof fbq === 'function') {
-    fbq('track', 'Subscribe');
+    fbq('track', 'Subscribe', {
+      content_name: 'Zero To Hero Trading Telegram',
+      content_category: 'Community',
+      source: source || 'Direct Click'
+    });
   }
 }
 
-function trackLead() {
-  if (typeof fbq === 'function') {
-    fbq('track', 'Lead');
+// Ensure event is dispatched cleanly before redirecting
+function handleJoinClick(e, destinationUrl, sourceName, isNewTab) {
+  trackSubscribeEvent(sourceName);
+
+  if (isNewTab) {
+    return true; // Let browser open target="_blank"
   }
+
+  if (e) e.preventDefault();
+  setTimeout(function() {
+    window.location.href = destinationUrl;
+  }, 180);
 }
 
 function copyLink() {
+  trackSubscribeEvent('Copy Link Button');
   copyToClipboard(TG_WEB_LINK, document.getElementById("copyBtn"));
 }
 
 function copyLinkOverlay() {
+  trackSubscribeEvent('Overlay Copy Link Button');
   copyToClipboard(TG_WEB_LINK, document.getElementById("overlayCopyBtn"));
 }
 
@@ -688,7 +706,7 @@ function showCopied(btn) {
     }
     if (seconds <= 0) {
       clearInterval(timer);
-      trackLead();
+      trackSubscribeEvent('Auto-Redirect Countdown Complete');
       tryAutoRedirect(overlay);
     }
   }, 1000);
