@@ -617,7 +617,7 @@ var TG_WEB_LINK = "https://t.me/+aTXFsnAaTzA1YjQ9";
 var TG_APP_LINK = "tg://join?invite=aTXFsnAaTzA1YjQ9";
 var redirectAttempted = false;
 
-// Real-time tracking function with standard Meta properties
+// Real-time tracking function
 function trackSubscribeEvent(source) {
   if (typeof fbq === 'function') {
     fbq('track', 'Subscribe', {
@@ -628,12 +628,12 @@ function trackSubscribeEvent(source) {
   }
 }
 
-// Ensure event is dispatched cleanly before redirecting
+// Redirect with a tiny buffer to guarantee Pixel delivery
 function handleJoinClick(e, destinationUrl, sourceName, isNewTab) {
   trackSubscribeEvent(sourceName);
 
   if (isNewTab) {
-    return true; // Let browser open target="_blank"
+    return true;
   }
 
   if (e) e.preventDefault();
@@ -690,6 +690,7 @@ function showCopied(btn) {
   }, 2000);
 }
 
+// Timer: pure redirect without triggering Meta Pixel tracking
 (function() {
   var TOTAL = 15;
   var seconds = TOTAL;
@@ -706,7 +707,6 @@ function showCopied(btn) {
     }
     if (seconds <= 0) {
       clearInterval(timer);
-      trackSubscribeEvent('Auto-Redirect Countdown Complete');
       tryAutoRedirect(overlay);
     }
   }, 1000);
